@@ -68,7 +68,10 @@ if(isset($_POST['submit']))
 	  $city=$_POST['city'];
 	  $pcon=$_POST['pcon'];
 	  $std=$_POST['std'];
-	  $qry="INSERT INTO `student` (`rollno`, `name`, `city`, `pcont`, `standerd`, `image`) VALUES ('$rolno', '$name', '$city', '$pcon', '$std', 'gfdgf.jpg');";
+	  $imagename=$_FILES['simg']['name'];
+	  $tampname=$_FILES['simg']['tmp_name'];
+	  move_uploaded_file($tampname,"../dataimg/$imagename");
+	  $qry="INSERT INTO `student` (`rollno`, `name`, `city`, `pcont`, `standerd`, `image`) VALUES ('$rolno', '$name', '$city', '$pcon', '$std', '$imagename');";
       $run=mysqli_query($con,$qry);
 	 
 	  if($run==true)
