@@ -15,7 +15,7 @@ include('titlehead.php');
  ?>
 
  <table align="center">
-      <form action="updatestudent.php" method="post">
+      <form action="deletestudent.php" method="post">
 	      <tr>
 	         <th>Enter Standerd</th>
 		     <td><input type="number" name="standerd" placeholder="Enter Standerd" required="required"></td>
@@ -57,7 +57,7 @@ include('titlehead.php');
 	       <td><img src="../dataimg/<?php echo $data['image'];?>"style="max-width:100px;"/></td>
 	       <td><?php echo $data['name']; ?></td>
 	       <td><?php echo $data['rollno']; ?></td>
-	       <td><a href="updateform.php?sid=<?php echo $data['id']?>">Edit</a></td>
+	       <td><a href="deleteform.php?sid=<?php echo $data['id']?>">Delete</a></td>
       </tr>
 	   
 	   <?php
